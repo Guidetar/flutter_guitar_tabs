@@ -19,14 +19,13 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           // Guitar
-          Center(
-            child: TabWidget(
-              name: 'Dm',
-              tabs: const ["x 0 0 2 3 1", "x 5 7 7 6 5", "10 12 12 10 10 10"],
-              size: 5,
-              color: Colors.black,
-              showStartFretNumber: true,
-            ),
+          FlutterGuitarTab(
+            // name: 'Dm',
+            tab: ["x", "0", "2", "2", "1", "0"].join(' '),
+            // tabs: const ["x 0 0 2 3 1", "x 5 7 7 6 5", "10 12 12 10 10 10"],
+            size: 5,
+            colorOption: FlutterGuitarTabsColorOption(baseColor: Colors.black),
+            showStartFretNumber: false,
           ),
           // Ukulele
           Center(
@@ -34,7 +33,8 @@ class HomePage extends StatelessWidget {
               name: 'Dm',
               tabs: const ["2 2 1 0"],
               size: 5,
-              color: Colors.black,
+              colorOption:
+                  FlutterGuitarTabsColorOption(baseColor: Colors.black),
               showStartFretNumber: true,
             ),
           ),
